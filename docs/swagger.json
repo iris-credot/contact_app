@@ -80,7 +80,7 @@
              }           
 },
 "/{id}":{
-    "put":{
+    "patch":{
          "summary":"Update a Contact by ID",
          "description":"Update an existing contact in the database",
          "tags":["Contacts"],
