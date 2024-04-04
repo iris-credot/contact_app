@@ -13,7 +13,7 @@ import swaggerjson from './docs/swagger.json' assert {type:'json'} ;
 
 app.use(express.json());
 app.use(cors());
-app.use("/api/contacts",router);
+app.use("/",router);
 
 app.use("/api-docs",swaggerui.serve,swaggerui.setup(swaggerjson));
 
