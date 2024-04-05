@@ -1,7 +1,8 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import express from 'express';
-import swaggerui from 'swagger-ui-express';
+// import swaggerui from 'swagger-ui-express';
+import swaggerUi from 'swagger-ui-express';
 import 'express-async-errors';
 const app = express();
 import configuration from './configs/index.js' ;
@@ -11,11 +12,12 @@ import router from './routes/contact.routes.js'
 import swaggerjson from './docs/swagger.json' assert {type:'json'} ;
 
 
+
 app.use(express.json());
 app.use(cors());
-app.use("/",router);
+app.use("/contact",router);
 
-app.use('/api',swaggerui.serve, swaggerui.setup(swaggerjson));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerjson));
 
 mongoose.connect(configuration.mongoURI)
 .then(() => {
@@ -26,3 +28,6 @@ mongoose.connect(configuration.mongoURI)
 .catch(err => {
     console.log(err);
 });
+app.use("/", (req,res)=>{
+    res.send("server is running");
+})

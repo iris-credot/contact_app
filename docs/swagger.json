@@ -2,12 +2,12 @@
     "swagger":"2.0",
     "info":{
         "title":"contact_app API",
-        "description":"API documentation for contact CRUD operations",
+        "description":"API documentation for contact CRUD operations ",
         "version":"1.0.0"
     },
     "schemes":["http","https"],
     "paths":{
-        "/":{
+        "/contact/":{
             "get":{
                 "summary":"Get all users",
                 "description":"all contacts",
@@ -79,7 +79,7 @@
                 }
              }           
 },
-"/{id}":{
+"/contact/{id}":{
     "patch":{
          "summary":"Update a Contact by ID",
          "description":"Update an existing contact in the database",
