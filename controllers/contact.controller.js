@@ -6,7 +6,7 @@ import Contact from '../models/contact.model.js';
 // Controller methods
 const contactController = {
   // Get all contacts
-  getAllContacts:asyncWrapper(async (req, res) => {
+  getAllContacts: asyncWrapper(async (req, res) => {
     const contacts = await Contact.find();
       res.json(contacts);
     }),

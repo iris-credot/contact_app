@@ -15,7 +15,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/",router);
 
-app.use("/api-docs",swaggerui.serve,swaggerui.setup(swaggerjson));
+app.use('/api',swaggerui.serve, swaggerui.setup(swaggerjson));
 
 mongoose.connect(configuration.mongoURI)
 .then(() => {
