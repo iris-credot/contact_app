@@ -28,6 +28,3 @@ mongoose.connect(configuration.mongoURI)
 .catch(err => {
     console.log(err);
 });
-app.use("/", (req,res)=>{
-    res.send("server is running");
-})
