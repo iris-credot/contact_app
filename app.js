@@ -17,14 +17,14 @@ app.use(express.json());
 app.use(cors());
 app.use("/contact",router);
 
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerjson));
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerjson));
 
 mongoose.connect(configuration.mongoURI)
 .then(() => {
     app.listen(configuration.port, ()=> {
         console.log("listening on port "+configuration.port);
-    });
+    })
 })
 .catch(err => {
     console.log(err);
-});
+})
