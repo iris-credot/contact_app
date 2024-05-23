@@ -17,7 +17,7 @@ app.use(express.json());
 app.use(cors());
 app.use("/contact",router);
 
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerjson));
+app.use('/contact-api', swaggerUi.serve, swaggerUi.setup(swaggerjson));
 
 mongoose.connect(configuration.mongoURI)
 .then(() => {
